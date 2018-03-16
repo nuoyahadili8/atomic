@@ -1,9 +1,9 @@
 ## SpringCloud && Vue 分布式微架构 + 前后端分离解决方案
-> **目前正在开发阶段, 相关文档会根据项目进度逐渐完善**
+> **目前正在开发阶段, 感谢老A、lengleng和wuwenze**
 
 ## 技术栈
 - 后端：SpringCloud、oAuth2、JWT、Eureka、Fegin、Ribbon、Zuul、Hystrix...
-- 前端：Vue2.x、iView、Webpack...
+- 前端：Vue2.x、iView、Webpack...(前端开源项目：https://github.com/artiely/vue-admin-iview.git)
 
 ## 预览
 ![](doc/images/login.jpg)
