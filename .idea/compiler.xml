@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="atomic-authority" />
+        <module name="atomic-common" />
+        <module name="atomic-config" />
+        <module name="atomic-db-mybatis" />
+        <module name="atomic-gateway" />
+        <module name="atomic-nosql-redis" />
+        <module name="atomic-registration" />
+        <module name="atomic-usercenter" />
+        <module name="atomicre-gistration" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="atomic-authority" target="1.8" />
+      <module name="atomic-common" target="1.8" />
+      <module name="atomic-config" target="1.8" />
+      <module name="atomic-db-mybatis" target="1.8" />
+      <module name="atomic-gateway" target="1.8" />
+      <module name="atomic-nosql-redis" target="1.8" />
+      <module name="atomic-parent" target="1.8" />
+      <module name="atomic-persistence" target="1.8" />
+      <module name="atomic-registration" target="1.8" />
+      <module name="atomic-usercenter" target="1.8" />
+      <module name="atomicre-gistration" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,30 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: atomic-config
+  profiles:
+    active: dev
+  # 配置中心git仓库
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://gitee.com/anliang11/high_availability_configuration_file.git
+          searchPaths: atomic-config-repo
+          username:
+          password:
+
+# 将配置中心注册到eureka实现高可用
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 20  #20秒没有响应就从服务器注册表中剔除掉
+    hostname: atomic-config.com
+  client:
+    serviceUrl:
+      defaultZone: http://an:123456@atomic-registration.com:8761/eureka/
+
+#logging:
+#  config: classpath:logback.xml

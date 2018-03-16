@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.al.usercenter.mapper.ResourceMapper">
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+    <resultMap id="ResultMapWithResource" type="com.github.al.common.entity.Resource">
+        <id column="Resource_id" property="id" />
+        <result column="Resource_code" property="code" /><!--//.资源编码(规则->菜单名:按钮名 || 菜单名)-->
+        <result column="Resource_name" property="name" /><!--//.资源名-->
+        <result column="Resource_type" property="type" /><!--//.类型(0菜单,1按钮,2其他)-->
+        <result column="Resource_url" property="url" /><!--//.服务端地址-->
+        <result column="Resource_method" property="method" /><!--//.请求方式,GET/POST/DELETE/PUT-->
+        <result column="Resource_priority" property="priority" /><!--//.优先级(仅作用于当前级别)-->
+        <result column="Resource_path" property="path" /><!--//.前端URL-->
+        <result column="Resource_component" property="component" /><!--//.组件地址-->
+        <result column="Resource_icon" property="icon" /><!--//.图标-->
+        <result column="Resource_parentId" property="parentId" /><!--//.父级ID-->
+        <result column="Resource_createAt" property="createAt" />
+        <result column="Resource_createDate" property="createDate" />
+        <result column="Resource_modifyAt" property="modifyAt" />
+        <result column="Resource_modifyDate" property="modifyDate" />
+    </resultMap>
+    <sql id="SqlWithResourceSelectAll">
+        SELECT
+            Resource.id AS Resource_id,
+            Resource.code AS Resource_code,
+            Resource.name AS Resource_name,
+            Resource.type AS Resource_type,
+            Resource.url AS Resource_url,
+            Resource.method AS Resource_method,
+            Resource.priority AS Resource_priority,
+            Resource.path AS Resource_path,
+            Resource.component AS Resource_component,
+            Resource.icon AS Resource_icon,
+            Resource.parentId AS Resource_parentId,
+            Resource.createAt AS Resource_createAt,
+            Resource.createDate AS Resource_createDate,
+            Resource.modifyAt AS Resource_modifyAt,
+            Resource.modifyDate AS Resource_modifyDate
+        FROM tb_resource AS Resource
+    </sql>
+
+    <sql id="SqlWithJoinRoleAndUser">
+        LEFT JOIN tb_role_resource RoleResource ON RoleResource.resourceId = Resource.id
+        LEFT JOIN tb_role Role ON Role.id = RoleResource.roleId
+        LEFT JOIN tb_user_role UserRole ON UserRole.roleId = Role.id
+        LEFT JOIN tb_user User on `User`.id = UserRole.userId
+    </sql>
+
+    <select id="findByUserId" parameterType="long" resultMap="ResultMapWithResource">
+        <include refid="SqlWithResourceSelectAll" />
+        <include refid="SqlWithJoinRoleAndUser" />
+        WHERE User.id = #{userId}
+    </select>
+
+    <select id="findWithUrlNotNullByRoleCode" parameterType="string" resultMap="ResultMapWithResource">
+        <include refid="SqlWithResourceSelectAll" />
+        LEFT JOIN tb_role_resource RoleResource ON RoleResource.resourceId = Resource.id
+        LEFT JOIN tb_role Role ON Role.id = RoleResource.roleId
+        WHERE Role.code = #{roleCode} AND Resource.url IS NOT NULL AND Resource.url != ''
+    </select>
+
+    <select id="getAllMenuByUsername" parameterType="string" resultMap="ResultMapWithResource">
+        <include refid="SqlWithResourceSelectAll" />
+        <include refid="SqlWithJoinRoleAndUser" />
+        WHERE User.username = #{username} AND Resource.type = 0
+    </select>
+</mapper>

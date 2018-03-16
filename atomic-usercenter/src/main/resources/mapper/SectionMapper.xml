@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.al.usercenter.mapper.SectionMapper">
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+    <resultMap id="ResultMapWithSection" type="com.github.al.common.entity.Section">
+        <id column="Section_id" property="id" />
+        <result column="Section_code" property="code" /><!--//.部门编号-->
+        <result column="Section_name" property="name" /><!--//.部门名称-->
+        <result column="Section_priority" property="priority" /><!--//.优先级-->
+        <result column="Section_parentId" property="parentId" /><!--//.父级ID-->
+        <result column="Section_createAt" property="createAt" />
+        <result column="Section_createDate" property="createDate" />
+        <result column="Section_modifyAt" property="modifyAt" />
+        <result column="Section_modifyDate" property="modifyDate" />
+    </resultMap>
+    <sql id="SqlWithSectionSelectAll">
+        SELECT
+            Section.id AS Section_id,
+            Section.code AS Section_code,
+            Section.name AS Section_name,
+            Section.priority AS Section_priority,
+            Section.parentId AS Section_parentId,
+            Section.createAt AS Section_createAt,
+            Section.createDate AS Section_createDate,
+            Section.modifyAt AS Section_modifyAt,
+            Section.modifyDate AS Section_modifyDate
+        FROM tb_section AS Section
+    </sql>
+</mapper>

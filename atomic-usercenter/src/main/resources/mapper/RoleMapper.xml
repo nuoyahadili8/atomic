@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.al.usercenter.mapper.RoleMapper">
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+    <resultMap id="ResultMapWithRole" type="com.github.al.common.entity.Role">
+        <id column="Role_id" property="id" />
+        <result column="Role_code" property="code" /><!--//.角色编码-->
+        <result column="Role_name" property="name" /><!--//.角色名称-->
+        <result column="Role_priority" property="priority" /><!--//.优先级-->
+        <result column="Role_description" property="description" /><!--//.描述-->
+        <result column="Role_createAt" property="createAt" />
+        <result column="Role_createDate" property="createDate" />
+        <result column="Role_modifyAt" property="modifyAt" />
+        <result column="Role_modifyDate" property="modifyDate" />
+    </resultMap>
+    <sql id="SqlWithRoleSelectAll">
+        SELECT
+            Role.id AS Role_id,
+            Role.code AS Role_code,
+            Role.name AS Role_name,
+            Role.priority AS Role_priority,
+            Role.description AS Role_description,
+            Role.createAt AS Role_createAt,
+            Role.createDate AS Role_createDate,
+            Role.modifyAt AS Role_modifyAt,
+            Role.modifyDate AS Role_modifyDate
+        FROM tb_role AS Role
+    </sql>
+
+    <select id="findByUserId" parameterType="long" resultMap="ResultMapWithRole">
+        <include refid="SqlWithRoleSelectAll" />
+        LEFT JOIN tb_user_role UserRole ON UserRole.roleId = Role.id
+        LEFT JOIN tb_user User ON User.id = UserRole.userId
+        WHERE User.id = #{userId}
+    </select>
+</mapper>

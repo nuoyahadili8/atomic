@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/atomic-authority/atomic-authority.iml" filepath="$PROJECT_DIR$/atomic-authority/atomic-authority.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atomic-common/atomic-common.iml" filepath="$PROJECT_DIR$/atomic-common/atomic-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atomic-config/atomic-config.iml" filepath="$PROJECT_DIR$/atomic-config/atomic-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atomic-persistence/atomic-db-mybatis/atomic-db-mybatis.iml" filepath="$PROJECT_DIR$/atomic-persistence/atomic-db-mybatis/atomic-db-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atomic-gateway/atomic-gateway.iml" filepath="$PROJECT_DIR$/atomic-gateway/atomic-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atomic-persistence/atomic-nosql-redis/atomic-nosql-redis.iml" filepath="$PROJECT_DIR$/atomic-persistence/atomic-nosql-redis/atomic-nosql-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atomic-parent.iml" filepath="$PROJECT_DIR$/atomic-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atomic-persistence/atomic-persistence.iml" filepath="$PROJECT_DIR$/atomic-persistence/atomic-persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atomic-registration/atomic-registration.iml" filepath="$PROJECT_DIR$/atomic-registration/atomic-registration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atomic-usercenter/atomic-usercenter.iml" filepath="$PROJECT_DIR$/atomic-usercenter/atomic-usercenter.iml" />
+    </modules>
+  </component>
+</project>

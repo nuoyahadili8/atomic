@@ -1,0 +1,32 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: atomic-registration
+  profiles:
+    active: dev
+
+# 标识该服务为注册中心
+eureka:
+  instance:
+    hostname: atomic-registration.com
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  # 关闭eureka自我保护机制
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 10000
+
+# Eureka 安全认证
+security:
+  basic:
+    enabled: true
+  user:
+    name: an
+    password: 123456
+
+#logging:
+#  config: classpath:logback.xml

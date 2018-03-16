@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: atomic-authority
+  # 从配置中心拉取配置, 其他配置文件都在git仓库上
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        service-id: atomic-config
+        enabled: true
+      label: master
+      profile: ${spring.profiles.active}
+      name: ${spring.application.name}
+
+# 注册到注册中心
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 20  #20秒没有响应就从服务器注册表中剔除掉
+    hostname: atomic-authority.com
+  client:
+    serviceUrl:
+      defaultZone: http://an:123456@atomic-registration.com:8761/eureka/

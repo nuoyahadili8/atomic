@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atomic-authority" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atomic-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atomic-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atomic-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atomic-persistence" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atomic-persistence/atomic-db-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atomic-persistence/atomic-nosql-redis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atomic-registration" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atomic-usercenter" charset="UTF-8" />
+  </component>
+</project>

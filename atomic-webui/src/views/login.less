@@ -1,0 +1,46 @@
+.login {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background: url('../assets/images/login/login_bg.jpg') center;
+  position: relative;
+  .login-title {
+    text-align: center;
+    .sub-title {
+      font-size: 12px;
+      color: #C0C4CC;
+    }
+  }
+
+  &-con {
+    position: absolute;
+    right: 160px;
+    top: 50%;
+    transform: translateY(-60%);
+    width: 300px;
+    .form-submit {
+      width: 100%;
+      color: #fff;
+      border-color: #6bc5a4;
+      background: #6bc5a4;
+      &:active, &:hover {
+        border-color: #31c555;
+        background: #31c555;
+      }
+    }
+    &-header {
+      font-size: 16px;
+      font-weight: 300;
+      text-align: center;
+      padding: 30px 0;
+    }
+    .form-con {
+      padding: 10px 0 0;
+    }
+    .login-tip {
+      font-size: 10px;
+      text-align: center;
+      color: #c3c3c3;
+    }
+  }
+}
