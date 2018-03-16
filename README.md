@@ -1,5 +1,5 @@
 ## SpringCloud && Vue 分布式微架构 + 前后端分离解决方案
-> **目前正在开发阶段, 请持续关注, 相关文档会根据项目进度逐渐完善**
+> **目前正在开发阶段, 相关文档会根据项目进度逐渐完善**
 
 ## 技术栈
 - 后端：SpringCloud、oAuth2、JWT、Eureka、Fegin、Ribbon、Zuul、Hystrix...
